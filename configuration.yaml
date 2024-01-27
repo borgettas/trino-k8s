@@ -1,33 +1,10 @@
 image:
-  tag: "436"
+  tag: "437"
 server:
   workers: 3
-  config:
-    http:
-      port: 8080
-    https:
-      port: 8080
-service:
-  port: 8080
-  type: ClusterIP
 coordinator:
   jvm:
     maxHeapSize: "8G"
 worker:
   jvm:
     maxHeapSize: "8G"
-additionalCatalogs:
-  lakehouse: |-
-    connector.name=gsheets
-    gsheets.credentials-path=/credentials/google-sheets-credentials.json
-    gsheets.metadata-sheet-id=1vnbNbzgVd1PpaN42C6f2SIFLm1xfo27RXnOyatLZGS4
-    gsheets.max-data-cache-size=1000
-    gsheets.data-cache-ttl=5m
-    gsheets.connection-timeout=20s
-    gsheets.read-timeout=20s
-    gsheets.write-timeout=20s
-  rdbms: |-
-    connector.name=postgresql
-    connection-url=jdbc:postgresql://example.net:5432/database
-    connection-user=root
-    connection-password=secret
